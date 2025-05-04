@@ -59,8 +59,9 @@ public class LivesManager : MonoBehaviour
     public void LoseLife()
     {
         LocalLives--;
+        NewUIUpdate.instance.UpdateLocalLives(LocalLives);
     }
-
+    public void ClearState() => LocalLives = GlobalLives;
     // private void EndGame()
     // {
     //     // UIManager.instance.GameOverManager();

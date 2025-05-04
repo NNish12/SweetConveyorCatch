@@ -3,7 +3,7 @@ using UnityEngine;
 public class CathcingItems : MonoBehaviour
 {
     public static CathcingItems instance { get; private set; }
-    private int _localCatchItems = 3;
+    private int _localCatchItems = 0;
     private int _globalCatchItems = 4;
 
     public int LocalCatchItems => _localCatchItems;
@@ -11,6 +11,7 @@ public class CathcingItems : MonoBehaviour
     public void CatchItemCount()
     {
         _localCatchItems++;
+        CheckCatchItems();
         NewUIUpdate.instance.UpdateLocalCatchItems(_localCatchItems);
     }
     private void Awake()
@@ -23,16 +24,21 @@ public class CathcingItems : MonoBehaviour
         }
         Destroy(this.gameObject);
     }
+        public void ClearState() => _localCatchItems = 0;
 
     public void CheckCatchItems()
     {
         if (_localCatchItems >= _globalCatchItems)
         {
-            ToNextLevel();
+            NewGameMechanics.instance.hasWon = true;
+            CoinsManager.instance.SumOfCoins();
+            _localCatchItems = 0;
         }
     }
-    public void ToNextLevel()
-    {
 
-    }
+    // public void ToNextLevel()
+    // {
+
+    // }
+    
 }

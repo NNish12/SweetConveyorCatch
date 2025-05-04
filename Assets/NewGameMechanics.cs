@@ -6,6 +6,7 @@ public class NewGameMechanics : MonoBehaviour
     public static NewGameMechanics instance { get; private set; }
     public bool isGameRunning = false;
     private Coroutine _coroutineSpawnObjects;
+    public bool hasWon = false;
     private void Awake()
     {
         if (instance == null)
@@ -43,6 +44,8 @@ public class NewGameMechanics : MonoBehaviour
         // Time.timeScale = 0f;
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
+        hasWon = true;
+        
 
     }
     public void ResumeGame()

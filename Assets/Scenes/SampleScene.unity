@@ -1026,6 +1026,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.794
       objectReference: {fileID: 0}
+    - target: {fileID: 2852157763658394596, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3356286613715046479, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -1311,6 +1315,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1 (5)
@@ -3305,6 +3313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Atomic_Fireball_3 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9075541746604836307, guid: 8d23ad9c690cd4abcbf5d15e6efa9221, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3697,11 +3709,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -38.9
+  near clip plane: -137.5
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 478.8
+  orthographic size: 595.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4095,6 +4107,10 @@ PrefabInstance:
     - target: {fileID: 1931427249158462625, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.794
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852157763658394596, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3356286613715046479, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_Mass
@@ -5417,6 +5433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Atomic_Fireball_3 4 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9075541746604836307, guid: 8d23ad9c690cd4abcbf5d15e6efa9221, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5569,6 +5589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectSpawner: {fileID: 8341226609707642804}
   isGameRunning: 0
+  hasWon: 0
 --- !u!1001 &487866281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5965,9 +5986,9 @@ RectTransform:
   - {fileID: 740917590}
   m_Father: {fileID: 1212722751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -113.387505}
   m_SizeDelta: {x: 280, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501717953
@@ -6882,6 +6903,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -21.649
       objectReference: {fileID: 0}
+    - target: {fileID: 2852157763658394596, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3356286613715046479, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -6958,6 +6983,10 @@ PrefabInstance:
     - target: {fileID: 8023706342637053699, guid: 8d23ad9c690cd4abcbf5d15e6efa9221, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 4 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075541746604836307, guid: 8d23ad9c690cd4abcbf5d15e6efa9221, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7239,6 +7268,10 @@ PrefabInstance:
     - target: {fileID: 4485199299387734929, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 31.238
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758977111651461760, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6203259289310111809, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
       propertyPath: m_Name
@@ -8300,9 +8333,9 @@ RectTransform:
   - {fileID: 402066706}
   m_Father: {fileID: 1212722751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -44.4625}
   m_SizeDelta: {x: 280, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &680239445
@@ -8387,7 +8420,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1042495713}
+      - m_Target: {fileID: 1215413624}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -9540,6 +9573,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1 (2)
@@ -9876,6 +9913,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1
@@ -10442,6 +10483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Atomic_Fireball_3 2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4778737132569587583, guid: 2f6545ad668974264b63f017dce3d2f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7971160223632828718, guid: 2f6545ad668974264b63f017dce3d2f1, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -10540,6 +10585,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1 (7)
@@ -10738,6 +10787,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1 (6)
@@ -11138,6 +11191,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -15.854
       objectReference: {fileID: 0}
+    - target: {fileID: 5758977111651461760, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6203259289310111809, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 3 (3)
@@ -11301,6 +11358,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1 (3)
@@ -11533,9 +11594,9 @@ RectTransform:
   - {fileID: 634366716}
   m_Father: {fileID: 1953064274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -72.15}
   m_SizeDelta: {x: 130, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &958818207
@@ -11655,9 +11716,9 @@ RectTransform:
   - {fileID: 1683009594}
   m_Father: {fileID: 1953064274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 220, y: -72.15}
   m_SizeDelta: {x: 130, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &962824076
@@ -12059,6 +12120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Atomic_Fireball_3 2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4778737132569587583, guid: 2f6545ad668974264b63f017dce3d2f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7971160223632828718, guid: 2f6545ad668974264b63f017dce3d2f1, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -12158,6 +12223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1 (8)
@@ -12692,6 +12761,10 @@ PrefabInstance:
     - target: {fileID: 8023706342637053699, guid: 8d23ad9c690cd4abcbf5d15e6efa9221, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 4 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075541746604836307, guid: 8d23ad9c690cd4abcbf5d15e6efa9221, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13756,6 +13829,10 @@ PrefabInstance:
     - target: {fileID: 8023706342637053699, guid: 8d23ad9c690cd4abcbf5d15e6efa9221, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 4 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075541746604836307, guid: 8d23ad9c690cd4abcbf5d15e6efa9221, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15155,7 +15232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1215413625
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16743,6 +16820,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -35.703
       objectReference: {fileID: 0}
+    - target: {fileID: 2852157763658394596, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3356286613715046479, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -16955,6 +17036,10 @@ PrefabInstance:
     - target: {fileID: 4485199299387734929, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758977111651461760, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6203259289310111809, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
       propertyPath: m_Name
@@ -17210,6 +17295,10 @@ PrefabInstance:
     - target: {fileID: 1931427249158462625, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.794
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852157763658394596, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3356286613715046479, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_Mass
@@ -20654,6 +20743,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1 (4)
@@ -21054,6 +21147,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1 (1)
@@ -22225,6 +22322,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5758977111651461760, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6203259289310111809, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 3
@@ -22775,9 +22876,9 @@ RectTransform:
   - {fileID: 1429817427}
   m_Father: {fileID: 1212722751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -182.3125}
   m_SizeDelta: {x: 280, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1758728273
@@ -22896,15 +22997,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1981734135686103029, guid: 76b55aad6e7df364db5297c34df4c0bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 1981734135686103029, guid: 76b55aad6e7df364db5297c34df4c0bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 1981734135686103029, guid: 76b55aad6e7df364db5297c34df4c0bb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14
+      value: 146
       objectReference: {fileID: 0}
     - target: {fileID: 1981734135686103029, guid: 76b55aad6e7df364db5297c34df4c0bb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23043,6 +23144,10 @@ PrefabInstance:
     - target: {fileID: 3024571049109962248, guid: 2f6545ad668974264b63f017dce3d2f1, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778737132569587583, guid: 2f6545ad668974264b63f017dce3d2f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7971160223632828718, guid: 2f6545ad668974264b63f017dce3d2f1, type: 3}
       propertyPath: m_Mass
@@ -23422,6 +23527,10 @@ PrefabInstance:
     - target: {fileID: 4485199299387734929, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -18.805
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758977111651461760, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6203259289310111809, guid: 1ef84ed7e27584796ad3922b0c9fa0eb, type: 3}
       propertyPath: m_Name
@@ -24879,9 +24988,9 @@ RectTransform:
   - {fileID: 962824075}
   m_Father: {fileID: 1212722751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -293.3875}
   m_SizeDelta: {x: 300, y: 144.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1953064275
@@ -25042,6 +25151,10 @@ PrefabInstance:
     - target: {fileID: 1931427249158462625, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.794
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852157763658394596, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3356286613715046479, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_Mass
@@ -25205,6 +25318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Atomic_Fireball_3 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4778737132569587583, guid: 2f6545ad668974264b63f017dce3d2f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7971160223632828718, guid: 2f6545ad668974264b63f017dce3d2f1, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -25323,6 +25440,156 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4b57b2e7e576416983ed0ca6c61058d, type: 3}
+--- !u!1 &2003786120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003786121}
+  - component: {fileID: 2003786126}
+  - component: {fileID: 2003786125}
+  - component: {fileID: 2003786124}
+  - component: {fileID: 2003786123}
+  - component: {fileID: 2003786122}
+  m_Layer: 0
+  m_Name: TestZoneImpact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2003786121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003786120}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.59, z: 0}
+  m_LocalScale: {x: 2.31, y: 0.16, z: 1.42}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8195720590928065576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003786122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003786120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428fedaf27a87463f81f871719a2dcbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _floorScaleDestroy: {fileID: 0}
+--- !u!54 &2003786123
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003786120}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2003786124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003786120}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2003786125
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003786120}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2003786126
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003786120}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &2005186070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25653,6 +25920,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1417801599}
     m_Modifications:
+    - target: {fileID: 1540506203239150062, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1657844208691795478, guid: 4761c2e65e8354e5eafce54a89326913, type: 3}
       propertyPath: m_Name
       value: Atomic_Fireball_3 1 (9)
@@ -26294,6 +26565,10 @@ PrefabInstance:
     - target: {fileID: 1931427249158462625, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -9.692
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852157763658394596, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3356286613715046479, guid: fee756e89b60544e0b9f7625437571ed, type: 3}
       propertyPath: m_Mass
@@ -30720,6 +30995,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 197232330}
+  - {fileID: 2003786121}
   m_Father: {fileID: 4960021986567322459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &8225304447974979615

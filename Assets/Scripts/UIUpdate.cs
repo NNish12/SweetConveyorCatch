@@ -11,6 +11,7 @@ public class UIUpdate : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _globalCoins;
     [SerializeField] private TextMeshProUGUI _upgradePriceAmountCoins;
     [SerializeField] private TextMeshProUGUI _upgradePriceLives;
+    
 
     private void Awake()
     {

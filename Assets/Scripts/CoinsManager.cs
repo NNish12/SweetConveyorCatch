@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class CoinsManager : MonoBehaviour
 {
@@ -55,6 +56,10 @@ public class CoinsManager : MonoBehaviour
             Debug.Log("Недостаточно монет для покупки жизни.");
         }
     }
+    public void AddLocalCoins(int value)
+    {
+        LocalCoins += value;
+    }
 
     public void BuyMoreCoins()
     {
@@ -70,21 +75,12 @@ public class CoinsManager : MonoBehaviour
             Debug.Log("Недостаточно монет для увеличения инвентаря.");
         }
     }
-
+    public void ClearState() => LocalCoins = 0;
     public void SumOfCoins()
     {
         GlobalCoins += LocalCoins;
         LocalCoins = 0;
     }
 
-    public void CheckCoins() // вызывается, когда монета попадает в корзину
-    {
-        if (LocalCoins >= _amountForNextLevelCoins)
-        {
-            // EndGame();
-            SumOfCoins();
-            // Загрузка сцены с меню или переход на следующий уровень
-        }
-    }
 
 }
