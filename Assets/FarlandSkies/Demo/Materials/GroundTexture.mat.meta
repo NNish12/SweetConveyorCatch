@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6e3f986af96b0864f9b448013dd16ddf
+timeCreated: 1459782192
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 60004
+  packageName: Farland Skies - Cloudy Crown
+  packageVersion: 1.0
+  assetPath: Assets/FarlandSkies/Demo/Materials/GroundTexture.mat
+  uploadId: 111526

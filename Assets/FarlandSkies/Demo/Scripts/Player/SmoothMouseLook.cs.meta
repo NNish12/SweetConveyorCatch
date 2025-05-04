@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 7a3dbf3efefc52e479d81cb27cd0b94a
+timeCreated: 1459541364
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 60004
+  packageName: Farland Skies - Cloudy Crown
+  packageVersion: 1.0
+  assetPath: Assets/FarlandSkies/Demo/Scripts/Player/SmoothMouseLook.cs
+  uploadId: 111526

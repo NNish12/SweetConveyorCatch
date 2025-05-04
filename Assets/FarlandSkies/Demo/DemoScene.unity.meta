@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 47cd513b8c4397e4ca272a1ff269d933
+timeCreated: 1459536464
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 60004
+  packageName: Farland Skies - Cloudy Crown
+  packageVersion: 1.0
+  assetPath: Assets/FarlandSkies/Demo/DemoScene.unity
+  uploadId: 111526
