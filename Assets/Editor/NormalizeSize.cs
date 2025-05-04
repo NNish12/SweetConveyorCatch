@@ -18,7 +18,7 @@ public class NormalizeSize : MonoBehaviour
             float maxSize = Mathf.Max(bounds.size.x, bounds.size.y, bounds.size.z);
             if (maxSize == 0) continue;
 
-            float scaleFactor = 30f / maxSize;
+            float scaleFactor = 5f / maxSize;
             obj.transform.localScale *= scaleFactor;
         }
     }
