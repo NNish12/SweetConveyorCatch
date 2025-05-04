@@ -30,7 +30,7 @@ public class CathcingItems : MonoBehaviour
     {
         if (_localCatchItems >= _globalCatchItems)
         {
-            NewGameMechanics.instance.hasWon = true;
+            NewGameMechanics.instance.isCoinAwardAllowed = true;
             CoinsManager.instance.SumOfCoins();
             _localCatchItems = 0;
         }

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NewGameMechanics : MonoBehaviour
@@ -6,10 +7,10 @@ public class NewGameMechanics : MonoBehaviour
     public static NewGameMechanics instance { get; private set; }
     public bool isGameRunning = false;
     private Coroutine _coroutineSpawnObjects;
-    public bool hasWon = false;
+    public bool isCoinAwardAllowed = false;
     private void Awake()
     {
-        if (instance == null)
+        if (instance)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
@@ -26,7 +27,11 @@ public class NewGameMechanics : MonoBehaviour
     {
         // Здесь должен быть вызов меню проигрыша, остановка игры и т.д.
         Debug.Log("Game Over");
-        Time.timeScale = 0f;
+        ResetGame();
+        isCoinAwardAllowed = true;
+        CoinsManager.instance.SumOfCoins();
+        //меню нынешних очков надо открыть + создать его
+
     }
     public void PauseGame()
     {
@@ -35,18 +40,19 @@ public class NewGameMechanics : MonoBehaviour
     }
     public void ResetGame()
     {
+        if (!isCoinAwardAllowed) CoinsManager.instance.LocalCoins = 0;
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
         Time.timeScale = 1f;
+        
     }
     public void WinGame()
     {
+        isCoinAwardAllowed = true;
         // Time.timeScale = 0f;
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
-        hasWon = true;
         
-
     }
     public void ResumeGame()
     {

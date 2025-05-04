@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class TargetScoreZone : MonoBehaviour
 {
-    [SerializeField] private DestroyOnImpactZone _floorScaleDestroy;
+    // [SerializeField] private DestroyOnImpactZone _floorScaleDestroy;
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
 
     {
-        if (other.gameObject != null)
+
+        if (collision.gameObject != null)
         {
-            FallingObjectMarker currentFalling = other.gameObject.GetComponent<FallingObjectMarker>();
+            FallingObjectMarker currentFalling = collision.gameObject.GetComponent<FallingObjectMarker>();
             if (currentFalling != null && !currentFalling.isTargerForDestroy)
             {
                 currentFalling.isTargerForDestroy = true;
@@ -20,8 +21,7 @@ public class TargetScoreZone : MonoBehaviour
                     CathcingItems.instance.CatchItemCount();
                     CoinsManager.instance.AddLocalCoins(3);
                 }
-                else
-                    if (currentFalling.gameObject.CompareTag("Fruit"))
+                else if (currentFalling.gameObject.CompareTag("Fruit"))
                 {
                     CathcingItems.instance.CatchItemCount();
                     CoinsManager.instance.AddLocalCoins(1);
@@ -30,8 +30,7 @@ public class TargetScoreZone : MonoBehaviour
                 {
                     LivesManager.instance.LoseLife();
                 }
-
-                Destroy(other.gameObject);
+                Destroy(collision.gameObject);
             }
         }
     }
