@@ -18,7 +18,7 @@ public class LivesManager : MonoBehaviour
 
             if (_localLives <= 0)
             {
-                EndGame();
+                // EndGame();
             }
         }
     }
@@ -33,7 +33,7 @@ public class LivesManager : MonoBehaviour
 
             if (_globalLives <= 0)
             {
-                EndGame();
+                // EndGame();
             }
         }
     }
@@ -61,11 +61,11 @@ public class LivesManager : MonoBehaviour
         LocalLives--;
     }
 
-    private void EndGame()
-    {
-        UIManager.instance.GameOverManager();
-        CoinsManager.instance.SumOfCoins();
-    }
+    // private void EndGame()
+    // {
+    //     // UIManager.instance.GameOverManager();
+    //     CoinsManager.instance.SumOfCoins();
+    // }
     private void Start()
     {
         NewUIUpdate.instance.UpdateAllUI();
