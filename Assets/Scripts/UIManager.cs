@@ -12,8 +12,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private PauseManager _pauseManager;
     [SerializeField] private ObjectSpawner _objectSpawner;
     [SerializeField] private GameObject _globalCoinsUI;
+    public static UIManager instance { get; private set; }
     public static bool isGameRunning = false;
     private Coroutine _coroutineSpawnObjects;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Update()
     {

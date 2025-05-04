@@ -9,6 +9,8 @@ public class UIUpdate : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _coins;
     [SerializeField] private TextMeshProUGUI _lives;
     [SerializeField] private TextMeshProUGUI _globalCoins;
+    [SerializeField] private TextMeshProUGUI _upgradePriceAmountCoins;
+    [SerializeField] private TextMeshProUGUI _upgradePriceLives;
 
     private void Awake()
     {
@@ -19,6 +21,14 @@ public class UIUpdate : MonoBehaviour
             return;
         }
         Destroy(this.gameObject);
+    }
+    private void Start()
+    {
+
+    }
+    public void UpdateAllUI(int globalCoins, int levelCoins, int priceLives, int priceCoin, int lives)
+    {
+        
     }
 
     public void UpdateCandyUI(int candy)
@@ -39,5 +49,13 @@ public class UIUpdate : MonoBehaviour
     public void UpdateGlobalCoinsUI(int globalCoins)
     {
         _globalCoins.text = globalCoins.ToString();
+    }
+    public void UpdateUpgradePriceAmountCoinsUI(int _priceCoinPerLevel)
+    {
+        _upgradePriceAmountCoins.text = _priceCoinPerLevel.ToString();
+    }
+    public void UpdateUpgradePriceLivesUI(int _priceLives)
+    {
+        _upgradePriceLives.text = _priceLives.ToString();
     }
 }

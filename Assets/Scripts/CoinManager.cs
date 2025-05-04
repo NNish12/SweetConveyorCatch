@@ -5,26 +5,27 @@ public class CoinManager : MonoBehaviour
     public static CoinManager instance { get; private set; }
     [SerializeField] private int maxCoinsPerGame = 5;
 
-    private int coins = 0;
-    private int globalCoins = 0;
-    private int priceForLive = 2;
-    public int Coins
+    private int _levelCoins = 0;
+    private int _globalCoins = 0;
+    private int _priceLives = 2;
+    private int _amountForNextLevelCoins = 5;
+    private int _priceCoinPerLevel = 5;
+    public int LevelCoins
     {
-        get => coins;
+        get => _levelCoins;
         set
         {
-            coins = Mathf.Max(0, value); // Никогда не уходит в минус
-            UIUpdate.instance.UpdateCoinsUI(coins);
+            _levelCoins = Mathf.Max(0, value); // Никогда не уходит в минус
+            UIUpdate.instance.UpdateCoinsUI(_levelCoins);
         }
     }
-
     public int GlobalCoins
     {
-        get => globalCoins;
+        get => _globalCoins;
         private set
         {
-            globalCoins = value;
-            UIUpdate.instance.UpdateGlobalCoinsUI(globalCoins);
+            _globalCoins = value;
+            UIUpdate.instance.UpdateGlobalCoinsUI(_globalCoins);
         }
     }
     private void Awake()
@@ -36,29 +37,49 @@ public class CoinManager : MonoBehaviour
     }
     public void BuyLife()
     {
-        if (Coins >= priceForLive)
+        if (GlobalCoins >= _priceLives)
         {
-            Coins -= priceForLive;
+            GlobalCoins -= _priceLives;
             LivesManager.instance.Lives++;
-            priceForLive *= 2;
+            _priceLives *= 2;
+            UIUpdate.instance.UpdateUpgradePriceLivesUI(_priceLives);
         }
         else
         {
             Debug.Log("Недостаточно монет для покупки жизни.");
         }
     }
-    public void AddCoins(int amount)
+    public void BuyMoreCoins()
     {
-        Coins += amount;
-        if (Coins >= maxCoinsPerGame)
+        if (GlobalCoins >= _priceCoinPerLevel)
         {
-            // EndGame();
+            GlobalCoins -= _priceCoinPerLevel;
+            _amountForNextLevelCoins++;
+            _priceCoinPerLevel *= 2;
+            UIUpdate.instance.UpdateUpgradePriceAmountCoinsUI(_priceCoinPerLevel);
+        }
+        else
+        {
+            Debug.Log("Недостаточно монет для увеличения инвенторя.");
         }
     }
     public void SumOfCoins()
     {
-        GlobalCoins += Coins;
+        GlobalCoins += LevelCoins;
         UIUpdate.instance.UpdateGlobalCoinsUI(GlobalCoins);
-        Coins = 0;
+        LevelCoins = 0;
+    }
+    public void EndGame()
+    {
+
+    }
+    public void CheckCoins() //метод вызываеся кгда монета попадает в триггер в корзине
+    {
+        if (LevelCoins >=_amountForNextLevelCoins)
+        {
+            EndGame();
+            SumOfCoins();
+            //загрузка базовой сцены с UI menu
+        }
     }
 }
