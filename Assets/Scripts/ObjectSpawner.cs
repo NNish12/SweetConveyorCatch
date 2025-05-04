@@ -15,7 +15,7 @@ public class ObjectSpawner : MonoBehaviour
 
     public IEnumerator SpawnObjects()
     {
-        if (!UIManager.isGameRunning)
+        if (!NewGameMechanics.instance.isGameRunning)
         {
             while (true) //здесь условие на конечный счет
             {
