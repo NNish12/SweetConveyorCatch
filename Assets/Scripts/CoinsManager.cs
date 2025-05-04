@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 public class CoinsManager : MonoBehaviour
 {

@@ -24,15 +24,18 @@ public class CathcingItems : MonoBehaviour
         }
         Destroy(this.gameObject);
     }
-        public void ClearState() => _localCatchItems = 0;
+    public void ClearState() => _localCatchItems = 0;
 
     public void CheckCatchItems()
     {
         if (_localCatchItems >= _globalCatchItems)
         {
-            NewGameMechanics.instance.isCoinAwardAllowed = true;
-            CoinsManager.instance.SumOfCoins();
+            int coinsBeforeReset = CoinsManager.instance.LocalCoins;
+            NewGameMechanics.instance.WinGame();
+            // NewUIUpdate.instance.UpdateLocalCatchItems(_localCatchItems);
             _localCatchItems = 0;
+            NewUIUpdate.instance.UpdateLocalCoins(coinsBeforeReset);
+
         }
     }
 
@@ -40,5 +43,5 @@ public class CathcingItems : MonoBehaviour
     // {
 
     // }
-    
+
 }

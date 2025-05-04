@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class NewGameMechanics : MonoBehaviour
@@ -5,6 +6,7 @@ public class NewGameMechanics : MonoBehaviour
     [SerializeField] private ObjectSpawner _objectSpawner;
     [SerializeField] private GameObject _finalMenu;
     [SerializeField] private GameObject _pauseButton;
+    [SerializeField] private TextMeshProUGUI textFinalMenu;
     private Coroutine _coroutineSpawnObjects;
     public static NewGameMechanics instance { get; private set; }
     public bool isGameRunning = false;
@@ -21,10 +23,7 @@ public class NewGameMechanics : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    // private void Start()
-    // {
-    //     // int localCoins = CoinsManager.instance.LocalCoins;
-    // } 
+
         public void StartGame()
     {
         Time.timeScale = 1f;
@@ -40,6 +39,7 @@ public class NewGameMechanics : MonoBehaviour
         isGameRunning = false;
         CoinsManager.instance.SumOfCoins();
         _finalMenu.SetActive(true);
+        textFinalMenu.text = "We don't need fast food!";
         _pauseButton.SetActive(false);
         //меню нынешних очков надо открыть + создать его
 
@@ -63,11 +63,12 @@ public class NewGameMechanics : MonoBehaviour
     {
         isCoinAwardAllowed = true;
         isGameRunning = false;
-        // Time.timeScale = 0f;
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
+        CoinsManager.instance.SumOfCoins();
         _finalMenu.SetActive(true);
-        
+        textFinalMenu.text = "You are win!";
+
     }
     public void ResumeGame()
     {
