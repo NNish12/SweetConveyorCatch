@@ -89,9 +89,5 @@ public class NewUIUpdate : MonoBehaviour
         _localCatchItemsText.text = value.ToString();
     }
 
-    public void GameOverManager()
-    {
-        // Здесь должен быть вызов меню проигрыша, остановка игры и т.д.
-        Debug.Log("Game Over");
-    }
+
 }

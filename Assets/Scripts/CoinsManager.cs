@@ -8,7 +8,6 @@ public class CoinsManager : MonoBehaviour
 
     private int _localCoins = 0;
     private int _globalCoins = 0;
-
     public int priceLives = 2;
     public int priceCoins = 5;
 
@@ -82,14 +81,10 @@ public class CoinsManager : MonoBehaviour
     {
         if (LocalCoins >= _amountForNextLevelCoins)
         {
-            EndGame();
+            // EndGame();
             SumOfCoins();
             // Загрузка сцены с меню или переход на следующий уровень
         }
     }
 
-    private void EndGame()
-    {
-        UIManager.instance.GameOverManager();
-    }
 }
