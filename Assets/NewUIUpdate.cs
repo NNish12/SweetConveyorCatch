@@ -8,8 +8,10 @@ public class NewUIUpdate : MonoBehaviour
     [Header("Coins")]
     [SerializeField] private TextMeshProUGUI _globalCoinsText;
     [SerializeField] private TextMeshProUGUI _localCoinsText;
+    [SerializeField] private TextMeshProUGUI _finalLocalCoins;
     [SerializeField] private TextMeshProUGUI _upgradePriceLivesText;
     [SerializeField] private TextMeshProUGUI _upgradePriceCatchText;
+
 
     [Header("Lives")]
     [SerializeField] private TextMeshProUGUI _localLivesText;
@@ -57,6 +59,7 @@ public class NewUIUpdate : MonoBehaviour
     public void UpdateLocalCoins(int value)
     {
         _localCoinsText.text = value.ToString();
+        _finalLocalCoins.text = value.ToString();
     }
 
     public void UpdateUpgradePriceLives(int value)
@@ -84,7 +87,7 @@ public class NewUIUpdate : MonoBehaviour
     {
         _globalCatchItemsText.text = value.ToString();
     }
-        public void UpdateLocalCatchItems(int value)
+    public void UpdateLocalCatchItems(int value)
     {
         _localCatchItemsText.text = value.ToString();
     }

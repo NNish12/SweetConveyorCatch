@@ -1,16 +1,18 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class NewGameMechanics : MonoBehaviour
 {
     [SerializeField] private ObjectSpawner _objectSpawner;
+    [SerializeField] private GameObject _finalMenu;
+    [SerializeField] private GameObject _pauseButton;
+    private Coroutine _coroutineSpawnObjects;
     public static NewGameMechanics instance { get; private set; }
     public bool isGameRunning = false;
-    private Coroutine _coroutineSpawnObjects;
     public bool isCoinAwardAllowed = false;
+
     private void Awake()
     {
-        if (instance)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
@@ -18,10 +20,16 @@ public class NewGameMechanics : MonoBehaviour
         }
         Destroy(this.gameObject);
     }
-    public void StartGame()
+
+    // private void Start()
+    // {
+    //     // int localCoins = CoinsManager.instance.LocalCoins;
+    // } 
+        public void StartGame()
     {
         Time.timeScale = 1f;
         _coroutineSpawnObjects = StartCoroutine(_objectSpawner.SpawnObjects());
+        isGameRunning = true;
     }
     public void GameOver()
     {
@@ -29,7 +37,10 @@ public class NewGameMechanics : MonoBehaviour
         Debug.Log("Game Over");
         ResetGame();
         isCoinAwardAllowed = true;
+        isGameRunning = false;
         CoinsManager.instance.SumOfCoins();
+        _finalMenu.SetActive(true);
+        _pauseButton.SetActive(false);
         //меню нынешних очков надо открыть + создать его
 
     }
@@ -41,17 +52,21 @@ public class NewGameMechanics : MonoBehaviour
     public void ResetGame()
     {
         if (!isCoinAwardAllowed) CoinsManager.instance.LocalCoins = 0;
+        NewUIUpdate.instance.UpdateLocalCoins(CoinsManager.instance.LocalCoins);
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
         Time.timeScale = 1f;
-        
+
+
     }
     public void WinGame()
     {
         isCoinAwardAllowed = true;
+        isGameRunning = false;
         // Time.timeScale = 0f;
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
+        _finalMenu.SetActive(true);
         
     }
     public void ResumeGame()

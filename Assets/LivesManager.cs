@@ -13,14 +13,14 @@ public class LivesManager : MonoBehaviour
         get => _localLives;
         private set
         {
-            if (_localLives <= 0) NewGameMechanics.instance.GameOver();
+            if (_localLives <= 0) 
+            {
+                NewGameMechanics.instance.GameOver();
+                NewUIUpdate.instance.UpdateLocalLives(0);
+                return;
+            }
             _localLives = value;
             NewUIUpdate.instance.UpdateLocalLives(_localLives);
-
-            if (_localLives <= 0)
-            {
-                // EndGame();
-            }
         }
     }
 
