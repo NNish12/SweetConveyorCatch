@@ -34,19 +34,20 @@ public class NewGameMechanics : MonoBehaviour
     }
     public void ResetGame()
     {
-        Time.timeScale = 0f;
+        StopCoroutine(_coroutineSpawnObjects);
+        _objectSpawner.ClearListObjects();
+        Time.timeScale = 1f;
     }
     public void WinGame()
     {
-        Time.timeScale = 0f;
+        // Time.timeScale = 0f;
+        StopCoroutine(_coroutineSpawnObjects);
+        _objectSpawner.ClearListObjects();
+
     }
-        public void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1f;
         isGameRunning = true;
     }
-    // private void EndGame()
-    // {
-    //     UIManager.instance.GameOverManager();
-    // }
 }
