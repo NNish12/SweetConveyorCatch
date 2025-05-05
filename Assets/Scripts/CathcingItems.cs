@@ -3,14 +3,14 @@ using UnityEngine;
 public class CathcingItems : MonoBehaviour
 {
     public static CathcingItems instance { get; private set; }
-    private int _localCatchItems = 0;
-    private int _globalCatchItems = 5;
+    // private int LocalCatchItems = 0;
+    // private int _globalCatchItems = 5;
 
-    public int LocalCatchItems => _localCatchItems;
-    public int GlobalCatchItems => _globalCatchItems;
+    public int LocalCatchItems { get; private set; } = 0;
+    public int GlobalCatchItems { get; private set; } = 2;
     public void AddCatchItem()
     {
-        _localCatchItems++;
+        LocalCatchItems++;
         UIUpdate.instance.UpdateLocalCatchItems(LocalCatchItems);
         CheckCatchItems();
     }
@@ -26,16 +26,21 @@ public class CathcingItems : MonoBehaviour
     }
     public void ClearState()
     {
-        _localCatchItems = 0;
+        LocalCatchItems = 0;
         UIUpdate.instance.UpdateLocalCatchItems(LocalCatchItems);
     }
 
     public void CheckCatchItems()
     {
-        if (_localCatchItems >= _globalCatchItems)
+        if (LocalCatchItems >= GlobalCatchItems)
         {
             GameMechanics.instance.WinGame();
         }
+    }
+    public void BuyAdditionalItem()
+    {
+        GlobalCatchItems++;
+        UIUpdate.instance.UpdateGlobalCatchItems(GlobalCatchItems);
     }
 
 }

@@ -11,7 +11,7 @@ public class CoinsManager : MonoBehaviour
     public int priceLives = 2;
     public int priceCoins = 5;
 
-    [SerializeField] private int _itemsCount = 5; //how many items need to catch to win
+    // [SerializeField] private int _itemsCount = 5; //how many items need to catch to win
 
     public int LocalCoins
     {
@@ -66,9 +66,10 @@ public class CoinsManager : MonoBehaviour
         if (GlobalCoins >= priceCoins)
         {
             GlobalCoins -= priceCoins;
-            _itemsCount++;
+            CathcingItems.instance.BuyAdditionalItem();
             priceCoins *= 2;
             UIUpdate.instance.UpdateUpgradePriceCoins(priceCoins);
+            // UIUpdate.instance.
         }
         else
         {
