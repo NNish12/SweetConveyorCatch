@@ -5726,6 +5726,7 @@ MonoBehaviour:
   _objectSpawner: {fileID: 8341226609707642804}
   _finalMenu: {fileID: 748936297}
   _pauseButton: {fileID: 525490823}
+  textFinalMenu: {fileID: 710745753}
   isGameRunning: 0
   isCoinAwardAllowed: 0
 --- !u!1001 &487866281
@@ -8971,7 +8972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: We don't need fast food!
+  m_text: Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bc7df05030afc4fc19b43484ae93a9d0, type: 2}
   m_sharedMaterial: {fileID: 7038198092220545288, guid: bc7df05030afc4fc19b43484ae93a9d0, type: 2}
@@ -9161,6 +9162,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 487009975}
+        m_TargetAssemblyTypeName: NewGameMechanics, Assembly-CSharp
+        m_MethodName: ClearStateAll
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -68,7 +68,12 @@ public class NewGameMechanics : MonoBehaviour
         CoinsManager.instance.SumOfCoins();
         _finalMenu.SetActive(true);
         textFinalMenu.text = "You are win!";
-
+    }
+    public void ClearStateAll()
+    {
+        CoinsManager.instance.ClearState();
+        // LivesManager.instance.ClearState();
+        CathcingItems.instance.ClearState();
     }
     public void ResumeGame()
     {

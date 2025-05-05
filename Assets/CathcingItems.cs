@@ -4,15 +4,15 @@ public class CathcingItems : MonoBehaviour
 {
     public static CathcingItems instance { get; private set; }
     private int _localCatchItems = 0;
-    private int _globalCatchItems = 4;
+    private int _globalCatchItems = 2;
 
     public int LocalCatchItems => _localCatchItems;
     public int GlobalCatchItems => _globalCatchItems;
     public void CatchItemCount()
     {
         _localCatchItems++;
-        CheckCatchItems();
         NewUIUpdate.instance.UpdateLocalCatchItems(_localCatchItems);
+        CheckCatchItems();
     }
     private void Awake()
     {
@@ -30,18 +30,8 @@ public class CathcingItems : MonoBehaviour
     {
         if (_localCatchItems >= _globalCatchItems)
         {
-            int coinsBeforeReset = CoinsManager.instance.LocalCoins;
             NewGameMechanics.instance.WinGame();
-            // NewUIUpdate.instance.UpdateLocalCatchItems(_localCatchItems);
-            _localCatchItems = 0;
-            NewUIUpdate.instance.UpdateLocalCoins(coinsBeforeReset);
-
         }
     }
-
-    // public void ToNextLevel()
-    // {
-
-    // }
 
 }
