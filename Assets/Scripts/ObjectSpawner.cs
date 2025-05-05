@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
@@ -15,7 +14,7 @@ public class ObjectSpawner : MonoBehaviour
 
     public IEnumerator SpawnObjects()
     {
-        if (!UIManager.isGameRunning)
+        if (!NewGameMechanics.instance.isGameRunning)
         {
             while (true) //здесь условие на конечный счет
             {

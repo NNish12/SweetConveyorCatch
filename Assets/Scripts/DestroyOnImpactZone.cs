@@ -1,17 +1,17 @@
 using System.Collections;
 using UnityEngine;
 
-public class ScaleDestroyMarker : MonoBehaviour
+public class DestroyOnImpactZone : MonoBehaviour
 {
     [SerializeField] private float shrinkDuration = 1f;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject != null)
         {
-            FallingObjectMarker currentFalling = collision.gameObject.GetComponent<FallingObjectMarker>();
-            if (currentFalling != null && !currentFalling.isTargerForDestroy)
+            FallingObjectMarker fallingObject = collision.gameObject.GetComponent<FallingObjectMarker>();
+            if (fallingObject != null && !fallingObject.isTargerForDestroy)
             {
-                currentFalling.isTargerForDestroy = true;
+                fallingObject.isTargerForDestroy = true;
                 StartCoroutine(ShrinkAndDestroy(collision.gameObject, shrinkDuration));
             }
         }
