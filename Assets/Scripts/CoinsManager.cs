@@ -46,7 +46,7 @@ public class CoinsManager : MonoBehaviour
         if (GlobalCoins >= priceLives)
         {
             GlobalCoins -= priceLives;
-            LivesManager.instance.GlobalLives++;
+            LivesManager.instance.BuyAdditionalLives();
             priceLives *= 2;
             UIUpdate.instance.UpdateUpgradePriceLives(priceLives);
         }
@@ -69,7 +69,6 @@ public class CoinsManager : MonoBehaviour
             CathcingItems.instance.BuyAdditionalItem();
             priceCoins *= 2;
             UIUpdate.instance.UpdateUpgradePriceCoins(priceCoins);
-            // UIUpdate.instance.
         }
         else
         {

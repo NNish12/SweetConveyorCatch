@@ -35,6 +35,7 @@ public class GameMechanics : MonoBehaviour
         // Здесь должен быть вызов меню проигрыша, остановка игры и т.д.
         Debug.Log("Game Over");
         ResetGame();
+        Time.timeScale = 0f;
         isCoinAwardAllowed = true;
         isGameRunning = false;
         CoinsManager.instance.SumOfCoins();
@@ -52,7 +53,9 @@ public class GameMechanics : MonoBehaviour
     public void ResetGame()
     {
         if (!isCoinAwardAllowed) CoinsManager.instance.LocalCoins = 0;
-        UIUpdate.instance.UpdateLocalCoins(CoinsManager.instance.LocalCoins);
+        // UIUpdate.instance.UpdateLocalCoins(CoinsManager.instance.LocalCoins);
+        // UIUpdate.instance.UpdateLocalLives(LivesManager.instance.LocalLives);
+        ClearStateAll();
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
         Time.timeScale = 1f;
@@ -67,12 +70,13 @@ public class GameMechanics : MonoBehaviour
         _objectSpawner.ClearListObjects();
         CoinsManager.instance.SumOfCoins();
         _finalMenu.SetActive(true);
+        Time.timeScale = 0f;
         textFinalMenu.text = "You are win!";
     }
     public void ClearStateAll()
     {
         CoinsManager.instance.ClearState();
-        // LivesManager.instance.ClearState();
+        LivesManager.instance.ClearState();
         CathcingItems.instance.ClearState();
     }
     public void ResumeGame()

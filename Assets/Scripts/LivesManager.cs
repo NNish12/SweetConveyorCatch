@@ -1,11 +1,12 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class LivesManager : MonoBehaviour
 {
     public static LivesManager instance { get; private set; }
 
-    private int _localLives = 0;
+    private int _localLives;
     private int _globalLives = 1;
 
     public int LocalLives
@@ -51,26 +52,28 @@ public class LivesManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void StartGame()
+        private void Start()
     {
-        LocalLives = GlobalLives;
+        _localLives = _globalLives;
+        UIUpdate.instance.UpdateAllUI();
     }
-
     public void LoseLife()
     {
         LocalLives--;
         UIUpdate.instance.UpdateLocalLives(LocalLives);
     }
-    public void ClearState() => LocalLives = GlobalLives;
-    // private void EndGame()
-    // {
-    //     // UIManager.instance.GameOverManager();
-    //     CoinsManager.instance.SumOfCoins();
-    // }
-    private void Start()
+    public void ClearState() 
     {
-        UIUpdate.instance.UpdateAllUI();
+        LocalLives = GlobalLives;
+        UIUpdate.instance.UpdateLocalLives(LocalLives);
+    }
+
+        public void BuyAdditionalLives()
+    {
+        _globalLives++;
+        _localLives = _globalLives;
+        UIUpdate.instance.UpdateGlobalLives(GlobalLives);
+        UIUpdate.instance.UpdateLocalLives(LocalLives);
     }
 
 }

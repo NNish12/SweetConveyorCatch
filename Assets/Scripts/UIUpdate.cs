@@ -56,7 +56,7 @@ public class UIUpdate : MonoBehaviour
         // Обновление пойманных предметов
         UpdateLocalCatchItems(CathcingItems.instance.LocalCatchItems);
         UpdateGlobalCatchItems(CathcingItems.instance.GlobalCatchItems);
-        Debug.Log("global catch all ui" + CathcingItems.instance.GlobalCatchItems);
+        // Debug.Log("global catch all ui" + CathcingItems.instance.GlobalCatchItems);
     }
 
     public void UpdateLocalCoins(int value)
