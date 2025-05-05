@@ -4,7 +4,7 @@ public class CoinsManager : MonoBehaviour
 {
     public static CoinsManager instance { get; private set; }
 
-    [SerializeField] private int maxCoinsPerGame = 5;
+    // [SerializeField] private int maxCoinsPerGame = 5;
 
     private int _localCoins = 0;
     private int _globalCoins = 0;
@@ -78,7 +78,6 @@ public class CoinsManager : MonoBehaviour
     public void SumOfCoins()
     {
         GlobalCoins += LocalCoins;
-        LocalCoins = 0;
     }
 
 
