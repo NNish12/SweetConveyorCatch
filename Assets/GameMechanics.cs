@@ -1,14 +1,14 @@
 using TMPro;
 using UnityEngine;
 
-public class NewGameMechanics : MonoBehaviour
+public class GameMechanics : MonoBehaviour
 {
     [SerializeField] private ObjectSpawner _objectSpawner;
     [SerializeField] private GameObject _finalMenu;
     [SerializeField] private GameObject _pauseButton;
     [SerializeField] private TextMeshProUGUI textFinalMenu;
     private Coroutine _coroutineSpawnObjects;
-    public static NewGameMechanics instance { get; private set; }
+    public static GameMechanics instance { get; private set; }
     public bool isGameRunning = false;
     public bool isCoinAwardAllowed = false;
 

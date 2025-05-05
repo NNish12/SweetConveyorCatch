@@ -30,7 +30,7 @@ public class CathcingItems : MonoBehaviour
     {
         if (_localCatchItems >= _globalCatchItems)
         {
-            NewGameMechanics.instance.WinGame();
+            GameMechanics.instance.WinGame();
         }
     }
 

@@ -15,7 +15,7 @@ public class LivesManager : MonoBehaviour
         {
             if (_localLives <= 0) 
             {
-                NewGameMechanics.instance.GameOver();
+                GameMechanics.instance.GameOver();
                 NewUIUpdate.instance.UpdateLocalLives(0);
                 return;
             }
