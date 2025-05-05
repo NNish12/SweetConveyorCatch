@@ -18,13 +18,14 @@ public class TargetScoreZone : MonoBehaviour
 
                 if (currentFalling.gameObject.CompareTag("Candy"))
                 {
-                    CathcingItems.instance.CatchItemCount();
                     CoinsManager.instance.AddLocalCoins(3);
+                    CathcingItems.instance.AddCatchItem();
                 }
                 else if (currentFalling.gameObject.CompareTag("Fruit"))
                 {
-                    CathcingItems.instance.CatchItemCount();
                     CoinsManager.instance.AddLocalCoins(1);
+                    CathcingItems.instance.AddCatchItem();
+
                 }
                 else if (currentFalling.gameObject.CompareTag("FastFood"))
                 {

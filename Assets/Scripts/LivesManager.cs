@@ -16,11 +16,11 @@ public class LivesManager : MonoBehaviour
             if (_localLives <= 0) 
             {
                 GameMechanics.instance.GameOver();
-                NewUIUpdate.instance.UpdateLocalLives(0);
+                UIUpdate.instance.UpdateLocalLives(0);
                 return;
             }
             _localLives = value;
-            NewUIUpdate.instance.UpdateLocalLives(_localLives);
+            UIUpdate.instance.UpdateLocalLives(_localLives);
         }
     }
 
@@ -30,7 +30,7 @@ public class LivesManager : MonoBehaviour
         set
         {
             _globalLives = Mathf.Max(0, value);
-            NewUIUpdate.instance.UpdateGlobalLives(_globalLives);
+            UIUpdate.instance.UpdateGlobalLives(_globalLives);
 
             if (_globalLives <= 0)
             {
@@ -60,7 +60,7 @@ public class LivesManager : MonoBehaviour
     public void LoseLife()
     {
         LocalLives--;
-        NewUIUpdate.instance.UpdateLocalLives(LocalLives);
+        UIUpdate.instance.UpdateLocalLives(LocalLives);
     }
     public void ClearState() => LocalLives = GlobalLives;
     // private void EndGame()
@@ -70,7 +70,7 @@ public class LivesManager : MonoBehaviour
     // }
     private void Start()
     {
-        NewUIUpdate.instance.UpdateAllUI();
+        UIUpdate.instance.UpdateAllUI();
     }
 
 }

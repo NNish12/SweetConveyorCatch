@@ -1,17 +1,17 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinsManager : MonoBehaviour
 {
     public static CoinsManager instance { get; private set; }
 
-    // [SerializeField] private int maxCoinsPerGame = 5;
 
     private int _localCoins = 0;
     private int _globalCoins = 0;
     public int priceLives = 2;
     public int priceCoins = 5;
 
-    private int _amountForNextLevelCoins = 5;
+    [SerializeField] private int _itemsCount = 5; //how many items need to catch to win
 
     public int LocalCoins
     {
@@ -19,7 +19,7 @@ public class CoinsManager : MonoBehaviour
         set
         {
             _localCoins = Mathf.Max(0, value);
-            NewUIUpdate.instance.UpdateLocalCoins(_localCoins);
+            UIUpdate.instance.UpdateLocalCoins(_localCoins);
         }
     }
 
@@ -29,7 +29,7 @@ public class CoinsManager : MonoBehaviour
         private set
         {
             _globalCoins = Mathf.Max(0, value);
-            NewUIUpdate.instance.UpdateGlobalCoins(_globalCoins);
+            UIUpdate.instance.UpdateGlobalCoins(_globalCoins);
         }
     }
 
@@ -48,36 +48,42 @@ public class CoinsManager : MonoBehaviour
             GlobalCoins -= priceLives;
             LivesManager.instance.GlobalLives++;
             priceLives *= 2;
-            NewUIUpdate.instance.UpdateUpgradePriceLives(priceLives);
+            UIUpdate.instance.UpdateUpgradePriceLives(priceLives);
         }
         else
         {
             Debug.Log("Недостаточно монет для покупки жизни.");
         }
     }
-    public void AddLocalCoins(int value)
+    public void AddLocalCoins(int value) 
     {
         LocalCoins += value;
+        UIUpdate.instance.UpdateLocalCoins(LocalCoins);
     }
 
-    public void BuyMoreCoins()
+    public void BuyMoreCatchItems()
     {
         if (GlobalCoins >= priceCoins)
         {
             GlobalCoins -= priceCoins;
-            _amountForNextLevelCoins++;
+            _itemsCount++;
             priceCoins *= 2;
-            NewUIUpdate.instance.UpdateUpgradePriceCoins(priceCoins);
+            UIUpdate.instance.UpdateUpgradePriceCoins(priceCoins);
         }
         else
         {
             Debug.Log("Недостаточно монет для увеличения инвентаря.");
         }
     }
-    public void ClearState() => LocalCoins = 0;
+    public void ClearState()
+    {
+        LocalCoins = 0;
+        UIUpdate.instance.UpdateLocalCoins(LocalCoins);
+    }
     public void SumOfCoins()
     {
         GlobalCoins += LocalCoins;
+        UIUpdate.instance.UpdateGlobalCoins(GlobalCoins);
     }
 
 

@@ -52,7 +52,7 @@ public class GameMechanics : MonoBehaviour
     public void ResetGame()
     {
         if (!isCoinAwardAllowed) CoinsManager.instance.LocalCoins = 0;
-        NewUIUpdate.instance.UpdateLocalCoins(CoinsManager.instance.LocalCoins);
+        UIUpdate.instance.UpdateLocalCoins(CoinsManager.instance.LocalCoins);
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
         Time.timeScale = 1f;

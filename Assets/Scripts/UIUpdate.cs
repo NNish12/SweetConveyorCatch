@@ -1,62 +1,96 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class UIUpdate : MonoBehaviour
 {
     public static UIUpdate instance { get; private set; }
 
-    [SerializeField] private TextMeshProUGUI _candy;
-    [SerializeField] private TextMeshProUGUI _coins;
-    [SerializeField] private TextMeshProUGUI _lives;
-    [SerializeField] private TextMeshProUGUI _globalCoins;
-    [SerializeField] private TextMeshProUGUI _upgradePriceAmountCoins;
-    [SerializeField] private TextMeshProUGUI _upgradePriceLives;
-    
+    [Header("Coins")]
+    [SerializeField] private TextMeshProUGUI _globalCoinsText;
+    [SerializeField] private TextMeshProUGUI _localCoinsText;
+    [SerializeField] private TextMeshProUGUI _finalLocalCoins;
+    [SerializeField] private TextMeshProUGUI _upgradePriceLivesText;
+    [SerializeField] private TextMeshProUGUI _upgradePriceCatchText;
+
+
+    [Header("Lives")]
+    [SerializeField] private TextMeshProUGUI _localLivesText;
+    [SerializeField] private TextMeshProUGUI _globalLivesText;
+
+    [Header("Catch Items")]
+    [SerializeField] private TextMeshProUGUI _globalCatchItemsText;
+    [SerializeField] private TextMeshProUGUI _localCatchItemsText;
+
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
-            return;
+            DontDestroyOnLoad(gameObject);
         }
-        Destroy(this.gameObject);
-    }
-    private void Start()
-    {
-
-    }
-    public void UpdateAllUI(int globalCoins, int levelCoins, int priceLives, int priceCoin, int lives)
-    {
-        
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void UpdateCandyUI(int candy)
+    public void UpdateGlobalCoins(int value)
     {
-        _candy.text = candy.ToString();
+        _globalCoinsText.text = value.ToString();
+    }
+    public void UpdateAllUI()
+    {
+        // Обновление монет
+        UpdateGlobalCoins(CoinsManager.instance.GlobalCoins);
+        UpdateLocalCoins(CoinsManager.instance.LocalCoins);
+        UpdateUpgradePriceLives(CoinsManager.instance.priceLives);
+        UpdateUpgradePriceCoins(CoinsManager.instance.priceCoins);
+
+        // Обновление жизней
+        UpdateGlobalLives(LivesManager.instance.GlobalLives);
+        UpdateLocalLives(LivesManager.instance.LocalLives);
+
+        // Обновление пойманных предметов
+        UpdateLocalCatchItems(CathcingItems.instance.LocalCatchItems);
+        UpdateGlobalCatchItems(CathcingItems.instance.GlobalCatchItems);
     }
 
-    public void UpdateCoinsUI(int coins)
+    public void UpdateLocalCoins(int value)
     {
-        _coins.text = coins.ToString();
+        _localCoinsText.text = value.ToString();
+        _finalLocalCoins.text = value.ToString();
     }
 
-    public void UpdateLivesUI(int lives)
+    public void UpdateUpgradePriceLives(int value)
     {
-        _lives.text = lives.ToString();
+        _upgradePriceLivesText.text = value.ToString();
     }
 
-    public void UpdateGlobalCoinsUI(int globalCoins)
+    public void UpdateUpgradePriceCoins(int value)
     {
-        _globalCoins.text = globalCoins.ToString();
+        _upgradePriceCatchText.text = value.ToString();
     }
-    public void UpdateUpgradePriceAmountCoinsUI(int _priceCoinPerLevel)
+
+
+    public void UpdateLocalLives(int value)
     {
-        _upgradePriceAmountCoins.text = _priceCoinPerLevel.ToString();
+        _localLivesText.text = value.ToString();
     }
-    public void UpdateUpgradePriceLivesUI(int _priceLives)
+
+    public void UpdateGlobalLives(int value)
     {
-        _upgradePriceLives.text = _priceLives.ToString();
+        _globalLivesText.text = value.ToString();
     }
+
+    public void UpdateGlobalCatchItems(int value)
+    {
+        _globalCatchItemsText.text = value.ToString();
+    }
+    public void UpdateLocalCatchItems(int value)
+    {
+        _localCatchItemsText.text = value.ToString();
+    }
+
+
 }

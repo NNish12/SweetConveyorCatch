@@ -4,14 +4,14 @@ public class CathcingItems : MonoBehaviour
 {
     public static CathcingItems instance { get; private set; }
     private int _localCatchItems = 0;
-    private int _globalCatchItems = 2;
+    private int _globalCatchItems = 5;
 
     public int LocalCatchItems => _localCatchItems;
     public int GlobalCatchItems => _globalCatchItems;
-    public void CatchItemCount()
+    public void AddCatchItem()
     {
         _localCatchItems++;
-        NewUIUpdate.instance.UpdateLocalCatchItems(_localCatchItems);
+        UIUpdate.instance.UpdateLocalCatchItems(LocalCatchItems);
         CheckCatchItems();
     }
     private void Awake()
@@ -24,7 +24,11 @@ public class CathcingItems : MonoBehaviour
         }
         Destroy(this.gameObject);
     }
-    public void ClearState() => _localCatchItems = 0;
+    public void ClearState()
+    {
+        _localCatchItems = 0;
+        UIUpdate.instance.UpdateLocalCatchItems(LocalCatchItems);
+    }
 
     public void CheckCatchItems()
     {
