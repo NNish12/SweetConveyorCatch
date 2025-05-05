@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4448085225238184113}
   - component: {fileID: 599832537829350253}
   - component: {fileID: 3887943533212723148}
-  - component: {fileID: 4858515531070918737}
+  - component: {fileID: 2587349993074707816}
   m_Layer: 0
   m_Name: Peppermint_Swirl_4 4
   m_TagString: Untagged
@@ -115,8 +115,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &4858515531070918737
-MeshCollider:
+--- !u!135 &2587349993074707816
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,7 +133,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4672358257242070424, guid: ba4f331ad84874f7a850b43ff17cfc57, type: 3}
+  serializedVersion: 3
+  m_Radius: 0.059999995
+  m_Center: {x: 0, y: 0.024999995, z: -0.00000001862645}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3813792205686535178}
   - component: {fileID: 5252249851919453383}
   - component: {fileID: 8722475078119188177}
-  - component: {fileID: 7214781318908789461}
+  - component: {fileID: 7239745106723636853}
   m_Layer: 0
   m_Name: Peppermint_Twist_1 6
   m_TagString: Untagged
@@ -115,8 +115,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7214781318908789461
-MeshCollider:
+--- !u!135 &7239745106723636853
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,7 +133,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1476785826753971434, guid: ba4f331ad84874f7a850b43ff17cfc57, type: 3}
+  serializedVersion: 3
+  m_Radius: 0.059999995
+  m_Center: {x: 0, y: 0.024999995, z: 0}
