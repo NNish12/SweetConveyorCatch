@@ -29,6 +29,7 @@ public class TargetScoreZone : MonoBehaviour
                 }
                 else if (currentFalling.gameObject.CompareTag("FastFood"))
                 {
+                    CoinsManager.instance.LocalCoins = 0;
                     LivesManager.instance.LoseLife();
                 }
                 Destroy(collision.gameObject);

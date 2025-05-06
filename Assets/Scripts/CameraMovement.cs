@@ -6,9 +6,8 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] public Camera cam;
     [SerializeField] private float _targetSize = 230f;
     [SerializeField] private float _targetSpeed = 300f;
-    public float waitingTime = 0.5f;
+    [SerializeField] private float _waitingTime = 1f;
     private Coroutine currentCoroutine;
-    [SerializeField] private ObjectSpawner spawner;
 
     private void Start()
     {
@@ -23,9 +22,10 @@ public class CameraMovement : MonoBehaviour
 
     private IEnumerator ZoomAfterDelay()
     {
-        yield return new WaitForSeconds(waitingTime);
-        yield return StartCoroutine(CameraZoom(_targetSize));
-        GameMechanics.instance.StartGame();
+        yield return new WaitForSeconds(_waitingTime);
+
+        StartCoroutine(CameraZoom(_targetSize));
+
     }
 
     private IEnumerator CameraZoom(float target)

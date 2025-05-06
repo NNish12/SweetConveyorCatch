@@ -29,7 +29,7 @@ public class GameMechanics : MonoBehaviour
         Time.timeScale = 1f;
         ClearStateAll();
         _coroutineSpawnObjects = StartCoroutine(_objectSpawner.SpawnObjects());
-        isGameRunning = true;
+        // isGameRunning = true;
     }
     public void GameOver()
     {
