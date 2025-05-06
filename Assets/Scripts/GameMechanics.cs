@@ -27,13 +27,12 @@ public class GameMechanics : MonoBehaviour
         public void StartGame()
     {
         Time.timeScale = 1f;
+        ClearStateAll();
         _coroutineSpawnObjects = StartCoroutine(_objectSpawner.SpawnObjects());
         isGameRunning = true;
     }
     public void GameOver()
     {
-        // Здесь должен быть вызов меню проигрыша, остановка игры и т.д.
-        Debug.Log("Game Over");
         ResetGame();
         Time.timeScale = 0f;
         isCoinAwardAllowed = true;
@@ -42,7 +41,6 @@ public class GameMechanics : MonoBehaviour
         _finalMenu.SetActive(true);
         textFinalMenu.text = "We don't need fast food!";
         _pauseButton.SetActive(false);
-        //меню нынешних очков надо открыть + создать его
 
     }
     public void PauseGame()
@@ -53,14 +51,9 @@ public class GameMechanics : MonoBehaviour
     public void ResetGame()
     {
         if (!isCoinAwardAllowed) CoinsManager.instance.LocalCoins = 0;
-        // UIUpdate.instance.UpdateLocalCoins(CoinsManager.instance.LocalCoins);
-        // UIUpdate.instance.UpdateLocalLives(LivesManager.instance.LocalLives);
-        ClearStateAll();
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
         Time.timeScale = 1f;
-
-
     }
     public void WinGame()
     {
@@ -70,6 +63,7 @@ public class GameMechanics : MonoBehaviour
         _objectSpawner.ClearListObjects();
         CoinsManager.instance.SumOfCoins();
         _finalMenu.SetActive(true);
+        _pauseButton.SetActive(false);
         Time.timeScale = 0f;
         textFinalMenu.text = "You are win!";
     }

@@ -14,14 +14,12 @@ public class LivesManager : MonoBehaviour
         get => _localLives;
         private set
         {
+            _localLives = value;
+            UIUpdate.instance.UpdateLocalLives(_localLives);
             if (_localLives <= 0) 
             {
                 GameMechanics.instance.GameOver();
-                UIUpdate.instance.UpdateLocalLives(0);
-                return;
             }
-            _localLives = value;
-            UIUpdate.instance.UpdateLocalLives(_localLives);
         }
     }
 
@@ -60,12 +58,12 @@ public class LivesManager : MonoBehaviour
     public void LoseLife()
     {
         LocalLives--;
-        UIUpdate.instance.UpdateLocalLives(LocalLives);
+        UIUpdate.instance.UpdateLocalLives(_localLives);
     }
     public void ClearState() 
     {
         LocalLives = GlobalLives;
-        UIUpdate.instance.UpdateLocalLives(LocalLives);
+        UIUpdate.instance.UpdateLocalLives(_localLives);
     }
 
         public void BuyAdditionalLives()

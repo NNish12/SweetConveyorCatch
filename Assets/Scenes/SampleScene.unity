@@ -224,7 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e34f2cfb3004221a7922b2a9465f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCoinsPerGame: 5
   priceLives: 2
   priceCoins: 5
 --- !u!1001 &51673967
@@ -8669,9 +8668,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2075017366}
-        m_TargetAssemblyTypeName: NewGameMechanics, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 2075017368}
+        m_TargetAssemblyTypeName: GameMechanics, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21407,7 +21406,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2123204358}
-  - {fileID: 3614073440056166115}
   m_Father: {fileID: 1845460275}
   m_LocalEulerAnglesHint: {x: 0, y: -188.505, z: 0}
 --- !u!1 &1590534765
@@ -23618,7 +23616,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1981734135686103029, guid: 76b55aad6e7df364db5297c34df4c0bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3614073440056166115}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b55aad6e7df364db5297c34df4c0bb, type: 3}
 --- !u!1 &1767108331
@@ -29690,12 +29691,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375185219302184488}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalRotation: {x: -0, y: 0.99698436, z: -0, w: 0.07760265}
+  m_LocalPosition: {x: -2.0117078, y: 0, z: -6.5036964}
+  m_LocalScale: {x: 0.39589137, y: 0.8163265, z: 0.77456033}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1575455882}
+  m_Father: {fileID: 2123204358}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &3621044657193593502
 MeshRenderer:
