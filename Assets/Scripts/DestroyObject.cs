@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject != null && other.gameObject.GetComponent<FallingObjectMarker>())
         {
