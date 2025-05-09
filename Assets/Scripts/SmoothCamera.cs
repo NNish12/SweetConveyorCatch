@@ -10,7 +10,7 @@ public class SmoothCamera : MonoBehaviour
 
     private void Start()
     {
-        _initialXOffset = transform.position.x - lookAt.position.x;
+        _initialXOffset = transform.position.x - lookAt.position.x + _distance;
     }
     private void LateUpdate()
     {
