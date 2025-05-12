@@ -53,21 +53,26 @@ public class GameMechanics : MonoBehaviour
     public void ResetGame()
     {
         if (!isCoinAwardAllowed) CoinsManager.instance.LocalCoins = 0;
-        StopCoroutine(_coroutineSpawnObjects);
+
+        if (_coroutineSpawnObjects != null)
+        {
+            StopCoroutine(_coroutineSpawnObjects);
+            _coroutineSpawnObjects = null;
+        }
+
         _objectSpawner.ClearListObjects();
         Time.timeScale = 1f;
     }
     public void WinGame()
     {
         isCoinAwardAllowed = true;
-        isGameRunning = false;        
+        isGameRunning = false;
         if (_coroutineSpawnObjects != null)
         {
             StopCoroutine(_coroutineSpawnObjects);
             _coroutineSpawnObjects = null;
         }
         audioSource.Play();
-        StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
         CoinsManager.instance.SumOfCoins();
         _finalMenu.SetActive(true);
