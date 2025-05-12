@@ -60,7 +60,12 @@ public class GameMechanics : MonoBehaviour
     public void WinGame()
     {
         isCoinAwardAllowed = true;
-        isGameRunning = false;
+        isGameRunning = false;        
+        if (_coroutineSpawnObjects != null)
+        {
+            StopCoroutine(_coroutineSpawnObjects);
+            _coroutineSpawnObjects = null;
+        }
         audioSource.Play();
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
@@ -81,5 +86,9 @@ public class GameMechanics : MonoBehaviour
     {
         Time.timeScale = 1f;
         isGameRunning = true;
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
