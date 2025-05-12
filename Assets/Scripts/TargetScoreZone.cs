@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class TargetScoreZone : MonoBehaviour
 {
-    // [SerializeField] private DestroyOnImpactZone _floorScaleDestroy;
 
-
+ public AudioSource audioSource;
     private void OnCollisionEnter(Collision collision)
-
     {
 
         if (collision.gameObject != null)
@@ -32,6 +30,8 @@ public class TargetScoreZone : MonoBehaviour
                     CoinsManager.instance.LocalCoins = 0;
                     LivesManager.instance.LoseLife();
                 }
+                audioSource.pitch = Random.Range(0.8f, 1.2f);
+                audioSource.Play();
                 Destroy(collision.gameObject);
             }
         }

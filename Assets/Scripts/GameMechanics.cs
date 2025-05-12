@@ -9,6 +9,7 @@ public class GameMechanics : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textFinalMenu;
     private Coroutine _coroutineSpawnObjects;
     public static GameMechanics instance { get; private set; }
+    public AudioSource audioSource;
     public bool isGameRunning = false;
     public bool isCoinAwardAllowed = false;
 
@@ -24,7 +25,7 @@ public class GameMechanics : MonoBehaviour
     }
 
 
-        public void StartGame()
+    public void StartGame()
     {
         Time.timeScale = 1f;
         ClearStateAll();
@@ -36,6 +37,7 @@ public class GameMechanics : MonoBehaviour
         ResetGame();
         Time.timeScale = 0f;
         isCoinAwardAllowed = true;
+        audioSource.Play();
         isGameRunning = false;
         CoinsManager.instance.SumOfCoins();
         _finalMenu.SetActive(true);
@@ -59,6 +61,7 @@ public class GameMechanics : MonoBehaviour
     {
         isCoinAwardAllowed = true;
         isGameRunning = false;
+        audioSource.Play();
         StopCoroutine(_coroutineSpawnObjects);
         _objectSpawner.ClearListObjects();
         CoinsManager.instance.SumOfCoins();
@@ -66,6 +69,7 @@ public class GameMechanics : MonoBehaviour
         _pauseButton.SetActive(false);
         Time.timeScale = 0f;
         textFinalMenu.text = "You are win!";
+
     }
     public void ClearStateAll()
     {
