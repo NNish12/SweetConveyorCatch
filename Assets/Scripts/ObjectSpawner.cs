@@ -18,7 +18,7 @@ public class ObjectSpawner : MonoBehaviour
         yield return new WaitForSeconds(_waitingTime);
         if (!GameMechanics.instance.isGameRunning)
         {
-            GameMechanics.instance.isGameRunning = true;
+            GameMechanics.instance.SetIsGameRunning(true);
             while (true) 
             {
                 CreateOneObject();

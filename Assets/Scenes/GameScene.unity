@@ -7988,7 +7988,7 @@ GameObject:
   - component: {fileID: 710745754}
   - component: {fileID: 710745753}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: FinalText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8033,7 +8033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: Final Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bc7df05030afc4fc19b43484ae93a9d0, type: 2}
   m_sharedMaterial: {fileID: 7038198092220545288, guid: bc7df05030afc4fc19b43484ae93a9d0, type: 2}
@@ -25965,10 +25965,8 @@ MonoBehaviour:
   _objectSpawner: {fileID: 8341226609707642804}
   _finalMenu: {fileID: 2111294322}
   _pauseButton: {fileID: 525490823}
-  textFinalMenu: {fileID: 710745753}
-  audioSource: {fileID: 950061190}
-  isGameRunning: 0
-  isCoinAwardAllowed: 0
+  _textFinalMenu: {fileID: 710745753}
+  _audioSource: {fileID: 950061190}
 --- !u!114 &2075017369
 MonoBehaviour:
   m_ObjectHideFlags: 0

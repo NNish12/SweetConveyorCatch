@@ -6,94 +6,114 @@ public class GameMechanics : MonoBehaviour
     [SerializeField] private ObjectSpawner _objectSpawner;
     [SerializeField] private GameObject _finalMenu;
     [SerializeField] private GameObject _pauseButton;
-    [SerializeField] private TextMeshProUGUI textFinalMenu;
+    [SerializeField] private TextMeshProUGUI _textFinalMenu;
+    [SerializeField] private AudioSource _audioSource;
+
     private Coroutine _coroutineSpawnObjects;
+
     public static GameMechanics instance { get; private set; }
-    public AudioSource audioSource;
-    public bool isGameRunning = false;
-    public bool isCoinAwardAllowed = false;
+
+    public bool isGameRunning { get; private set; } = false;
+    public bool isCoinAwardAllowed { get; private set; } = false;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
-            return;
+            DontDestroyOnLoad(gameObject);
         }
-        Destroy(this.gameObject);
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
+    public void SetIsGameRunning(bool value)
+    {
+        isGameRunning = value;
+    }
 
     public void StartGame()
     {
         Time.timeScale = 1f;
         ClearStateAll();
         _coroutineSpawnObjects = StartCoroutine(_objectSpawner.SpawnObjects());
-        // isGameRunning = true;
     }
+
     public void GameOver()
     {
-        ResetGame();
-        Time.timeScale = 0f;
-        isCoinAwardAllowed = true;
-        audioSource.Play();
-        isGameRunning = false;
-        CoinsManager.instance.SumOfCoins();
-        _finalMenu.SetActive(true);
-        textFinalMenu.text = "We don't need fast food!";
-        _pauseButton.SetActive(false);
+        if (!isCoinAwardAllowed)
+            CoinsManager.instance.LocalCoins = 0;
 
+        isCoinAwardAllowed = true;
+        EndGameCommon();
+        ShowFinalMenu("We don't need fast food!");
     }
+
+    public void WinGame()
+    {
+        isCoinAwardAllowed = true;
+        EndGameCommon();
+        ShowFinalMenu("You are win!");
+    }
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
         isGameRunning = false;
     }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        isGameRunning = true;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
     public void ResetGame()
     {
-        if (!isCoinAwardAllowed) CoinsManager.instance.LocalCoins = 0;
+        if (!isCoinAwardAllowed)
+            CoinsManager.instance.LocalCoins = 0;
 
-        if (_coroutineSpawnObjects != null)
-        {
-            StopCoroutine(_coroutineSpawnObjects);
-            _coroutineSpawnObjects = null;
-        }
-
+        StopObjectSpawning();
         _objectSpawner.ClearListObjects();
         Time.timeScale = 1f;
     }
-    public void WinGame()
-    {
-        isCoinAwardAllowed = true;
-        isGameRunning = false;
-        if (_coroutineSpawnObjects != null)
-        {
-            StopCoroutine(_coroutineSpawnObjects);
-            _coroutineSpawnObjects = null;
-        }
-        audioSource.Play();
-        _objectSpawner.ClearListObjects();
-        CoinsManager.instance.SumOfCoins();
-        _finalMenu.SetActive(true);
-        _pauseButton.SetActive(false);
-        Time.timeScale = 0f;
-        textFinalMenu.text = "You are win!";
 
-    }
     public void ClearStateAll()
     {
         CoinsManager.instance.ClearState();
         LivesManager.instance.ClearState();
         CathcingItems.instance.ClearState();
     }
-    public void ResumeGame()
+
+    private void StopObjectSpawning()
     {
-        Time.timeScale = 1f;
-        isGameRunning = true;
+        if (_coroutineSpawnObjects != null)
+        {
+            StopCoroutine(_coroutineSpawnObjects);
+            _coroutineSpawnObjects = null;
+        }
     }
-    public void ExitGame()
+
+    private void EndGameCommon()
     {
-        Application.Quit();
+        StopObjectSpawning();
+        _objectSpawner.ClearListObjects();
+        _audioSource.Play();
+        CoinsManager.instance.SumOfCoins();
+        Time.timeScale = 0f;
+        isGameRunning = false;
+    }
+
+    private void ShowFinalMenu(string message)
+    {
+        _finalMenu.SetActive(true);
+        _pauseButton.SetActive(false);
+        _textFinalMenu.text = message;
     }
 }
