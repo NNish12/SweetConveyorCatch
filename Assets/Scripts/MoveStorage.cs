@@ -13,7 +13,6 @@ public class MoveStorage : MonoBehaviour
 
     void Start()
     {
-        // Сохраняем начальную позицию
         startPosition = transform.position;
     }
 
@@ -24,7 +23,7 @@ public class MoveStorage : MonoBehaviour
 
         CurrentDirection = new Vector3 (Input.GetAxis(Horizontal) * _moveSpeed, 0f, 0f);
 
-        // Обновляем позицию, оставляя Y и Z как есть
+
         transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
     }
 
