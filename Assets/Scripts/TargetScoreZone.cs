@@ -3,7 +3,7 @@ using UnityEngine;
 public class TargetScoreZone : MonoBehaviour
 {
 
- public AudioSource audioSource;
+    public AudioSource audioSource;
     private void OnCollisionEnter(Collision collision)
     {
 
