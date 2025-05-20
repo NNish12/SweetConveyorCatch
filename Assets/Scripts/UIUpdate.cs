@@ -19,7 +19,6 @@ public class UIUpdate : MonoBehaviour
 
     [Header("Catch Items")]
     [SerializeField] private TextMeshProUGUI _globalCatchItemsText;
-    // [SerializeField] private TextMeshProUGUI _globalCatchItemsText;
     [SerializeField] private TextMeshProUGUI _localCatchItemsText;
     
 
@@ -55,8 +54,7 @@ public class UIUpdate : MonoBehaviour
 
         // Обновление пойманных предметов
         UpdateLocalCatchItems(CathcingItems.instance.LocalCatchItems);
-        UpdateGlobalCatchItems(CathcingItems.instance.GlobalCatchItems);
-        // Debug.Log("global catch all ui" + CathcingItems.instance.GlobalCatchItems);
+        UpdateGlobalCatchItems(CathcingItems.instance.GlobalCatchItems); 
     }
 
     public void UpdateLocalCoins(int value)
@@ -88,9 +86,7 @@ public class UIUpdate : MonoBehaviour
 
     public void UpdateGlobalCatchItems(int value)
     {
-        Debug.Log("global catch" + CathcingItems.instance.GlobalCatchItems);
         _globalCatchItemsText.text = value.ToString();
-        Debug.Log("global catch" + CathcingItems.instance.GlobalCatchItems);
     }
     public void UpdateLocalCatchItems(int value)
     {

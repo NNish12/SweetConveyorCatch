@@ -11,7 +11,6 @@ public class CoinsManager : MonoBehaviour
     public int priceLives = 2;
     public int priceCoins = 5;
 
-    // [SerializeField] private int _itemsCount = 5; //how many items need to catch to win
 
     public int LocalCoins
     {

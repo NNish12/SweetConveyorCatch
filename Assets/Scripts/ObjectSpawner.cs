@@ -9,14 +9,17 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private float _spaceMin = -30f;
     [SerializeField] private float _spaceMax = 30f;
     [SerializeField] private float _forceAmout = 10f;
+    [SerializeField] private float _waitingTime = 1.5f;
     private List<GameObject> _spawnedObjects = new List<GameObject>();
 
 
     public IEnumerator SpawnObjects()
     {
+        yield return new WaitForSeconds(_waitingTime);
         if (!GameMechanics.instance.isGameRunning)
         {
-            while (true) //здесь условие на конечный счет
+            GameMechanics.instance.SetIsGameRunning(true);
+            while (true) 
             {
                 CreateOneObject();
                 yield return new WaitForSeconds(spawnTime);
